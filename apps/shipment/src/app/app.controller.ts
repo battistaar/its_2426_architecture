@@ -6,7 +6,7 @@ import { EventPattern } from '@nestjs/microservices';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @EventPattern('order_status_payed')
+  @EventPattern('order_status_paid')
   async handleUserCreated(data: Record<string, unknown>) {
     console.log(data);
   }

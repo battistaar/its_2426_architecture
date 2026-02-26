@@ -11,7 +11,7 @@ export class AppController {
   async getData() {
     console.log('start');
     const quantity = await this.appSrv.getProductQuantity('123432');
-    this.appSrv.sendStatus('payed', 'q124121242');
+    this.appSrv.sendStatus('paid', 'q124121242');
     return quantity;
   }
 }
