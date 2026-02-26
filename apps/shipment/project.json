@@ -1,7 +1,7 @@
 {
-  "name": "microservice_test",
+  "name": "shipment",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/microservice_test/src",
+  "sourceRoot": "apps/shipment/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "options": {
         "command": "webpack-cli build",
         "args": ["--node-env=production"],
-        "cwd": "apps/microservice_test"
+        "cwd": "apps/shipment"
       },
       "configurations": {
         "development": {
@@ -22,8 +22,8 @@
       "cache": true,
       "executor": "@nx/js:prune-lockfile",
       "outputs": [
-        "{workspaceRoot}/dist/apps/microservice_test/package.json",
-        "{workspaceRoot}/dist/apps/microservice_test/package-lock.json"
+        "{workspaceRoot}/dist/apps/shipment/package.json",
+        "{workspaceRoot}/dist/apps/shipment/package-lock.json"
       ],
       "options": {
         "buildTarget": "build"
@@ -32,9 +32,7 @@
     "copy-workspace-modules": {
       "dependsOn": ["build"],
       "cache": true,
-      "outputs": [
-        "{workspaceRoot}/dist/apps/microservice_test/workspace_modules"
-      ],
+      "outputs": ["{workspaceRoot}/dist/apps/shipment/workspace_modules"],
       "executor": "@nx/js:copy-workspace-modules",
       "options": {
         "buildTarget": "build"
@@ -50,15 +48,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "microservice_test:build",
+        "buildTarget": "shipment:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "microservice_test:build:development"
+          "buildTarget": "shipment:build:development"
         },
         "production": {
-          "buildTarget": "microservice_test:build:production"
+          "buildTarget": "shipment:build:production"
         }
       }
     }

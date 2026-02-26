@@ -1,0 +1,19 @@
+{
+  "name": "ext-service-redis",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "continuous": false,
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "development",
+      "options": {
+        "commands": [
+          "docker rm -f test-redis || true",
+          "docker run -p 6379:6379 --name test-redis docker.io/redis:latest"
+        ],
+        "parallel": false
+      }
+    }
+  }
+}

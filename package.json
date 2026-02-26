@@ -2,7 +2,9 @@
   "name": "@microservice-test/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many --target=serve --all--parallel=10"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^11.0.0",
